@@ -11,12 +11,12 @@ import {
 
 import Colors from "../constants/colors";
 
-function Question1(props) {
+function Question2(props) {
   return (
     <ImageBackground
       resizeMode="cover"
       style={styles.background}
-      source={require("../assets/question_1.png")}
+      source={require("../assets/question_2.png")}
     >
       <TextInput></TextInput>
     </ImageBackground>
@@ -54,4 +54,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Question1;
+export default Question2;

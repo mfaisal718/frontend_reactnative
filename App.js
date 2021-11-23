@@ -1,26 +1,19 @@
-import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import WelcomeScreen from "./app/screens/WelcomeScreen";
-import GameBoard from "./app/screens/GameBoard";
+import React, { useState } from "react";
+import { createStore, combineReducers, applyMiddleware } from "redux";
+import { Provider } from "react-redux";
+import { AppLoading } from "expo";
+import * as Font from "expo-font";
+import ReduxThunk from "redux-thunk";
 
-const Stack = createNativeStackNavigator();
+import answersReducer from "./app/store/reducers/answers.js";
+import ShopNavigator from "./app/navigation/ShopNavigator.js";
 
-const MyStack = () => {
+const store = createStore(rootReducer, applyMiddleware(ReduxThunk));
+
+export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Welcome"
-          component={WelcomeScreen}
-          options={{ title: "Welcome" }}
-        >
-          <WelcomeScreen />
-        </Stack.Screen>
-        <Stack.Screen name="GameBoard" component={GameBoard} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Provider store={store}>
+      <ShopNavigator />
+    </Provider>
   );
-};
-
-export default Stack;
+}

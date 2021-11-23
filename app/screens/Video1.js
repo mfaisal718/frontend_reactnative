@@ -6,17 +6,18 @@ import {
   Text,
   View,
   Button,
+  Video,
   TextInput,
 } from "react-native";
 
 import Colors from "../constants/colors";
 
-function Question1(props) {
+function Video1(props) {
   return (
     <ImageBackground
       resizeMode="cover"
       style={styles.background}
-      source={require("../assets/question_1.png")}
+      source={require("../assets/Video1.png")}
     >
       <TextInput></TextInput>
     </ImageBackground>
@@ -54,4 +55,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Question1;
+export default Video1;
