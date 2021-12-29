@@ -1,9 +1,6 @@
 import React from "react";
-import {
-  createStackNavigator,
-  createDrawerNavigator,
-  createAppContainer,
-} from "react-navigation";
+import { createStackNavigator } from "@react-navigation/stack";
+import { createAppContainer } from "react-navigation";
 import { Platform } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
@@ -27,13 +24,13 @@ const defaultNavOptions = {
   headerTintColor: Platform.OS === "android" ? "white" : Colors.primary,
 };
 
-const ProductsNavigator = createStackNavigator(
+const AnswersNavigator = createStackNavigator(
   {
     WelcomeScreen: WelcomeScreen,
-    GameBoard: GameBoardScreen,
-    Question1: Question1Screen,
-    Question2: Question2Screen,
-    Video1: Video1Screen,
+    GameBoard: GameBoard,
+    Question1: Question1,
+    Question2: Question2,
+    Video1: Video1,
   },
   {
     navigationOptions: {
