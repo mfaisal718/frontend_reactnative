@@ -62,12 +62,30 @@ function App() {
         <Stack.Screen
           name="Home"
           component={HomeScreen}
-          options={{ title: "FinGem.io" }}
+          options={{
+            title: "FinGem.io",
+            headerStyle: {
+              backgroundColor: "#1be2dc",
+            },
+            headerTintColor: "#fff",
+            headerTitleStyle: {
+              fontWeight: "bold",
+            },
+          }}
         />
         <Stack.Screen
           name="GameBoard"
           component={GameBoard}
-          options={{ title: "FinGem.io" }}
+          options={{
+            title: "FinGem.io",
+            headerStyle: {
+              backgroundColor: "#1be2dc",
+            },
+            headerTintColor: "#fff",
+            headerTitleStyle: {
+              fontWeight: "bold",
+            },
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>
