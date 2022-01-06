@@ -11,6 +11,7 @@ import {
 } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 function HomeScreen({ navigation }) {
   return (
@@ -31,11 +32,27 @@ function HomeScreen({ navigation }) {
           Empowering Communities Through Financial Literacy
         </Text>
       </View>
-      <Button
+      <TouchableOpacity
         title="LOGIN"
         style={styles.loginButton}
         onPress={() => navigation.navigate("GameBoard")}
-      ></Button>
+      >
+        <Text style={styles.buttonText}>LOGIN</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        title="REGISTER"
+        style={styles.loginButton}
+        onPress={() => navigation.navigate("GameBoard")}
+      >
+        <Text style={styles.buttonText}>REGISTER</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        title="LIBRARY"
+        style={styles.loginButton}
+        onPress={() => navigation.navigate("GameBoard")}
+      >
+        <Text style={styles.buttonText}>LIBRARY</Text>
+      </TouchableOpacity>
     </ImageBackground>
   );
 }
@@ -110,15 +127,19 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   loginButton: {
-    width: "100%",
-    height: 80,
-    backgroundColor: "#f0f",
+    width: 140,
+    height: 53,
+    paddingVertical: 10,
+    paddingHorizontal: 25,
+    borderRadius: 50,
+    marginTop: 10,
+    marginBottom: 10,
+    backgroundColor: "#1be2dc",
   },
-  registerButton: {
-    width: "100%",
-    height: 80,
+  buttonText: {
+    color: "white",
+    fontSize: 20,
     textAlign: "center",
-    padding: 10,
   },
   logo: {
     width: 240,
