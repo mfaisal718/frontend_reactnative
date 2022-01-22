@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
   },
   background: {
     flex: 1,
-    resizeMode: "cover",
+    resizeMode: "center",
     justifyContent: "flex-end",
     alignItems: "center",
   },
