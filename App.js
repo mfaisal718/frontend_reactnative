@@ -16,7 +16,7 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="WelcomeScreen"
+        initialRouteName="FinGem.io"
         screenOptions={{
           headerMode: "screen",
           headerTintColor: "white",
