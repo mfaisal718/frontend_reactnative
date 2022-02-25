@@ -1,159 +1,38 @@
-// In App.js in a new project
-
+import "react-native-gesture-handler";
 import * as React from "react";
-import {
-  Image,
-  StyleSheet,
-  ImageBackground,
-  Button,
-  View,
-  Text,
-} from "react-native";
+import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import WelcomeScreen from "./screens/WelcomeScreen";
+import GameBoard from "./screens/GameBoard";
+import Round1 from "./screens/Round1";
+import Visual1 from "./screens/Visual1";
+import Visual2 from "./screens/Visual2";
+import Imagine from "./screens/Imagine";
+import Question1 from "./screens/Question1";
 
-function HomeScreen({ navigation }) {
-  return (
-    <ImageBackground
-      resizeMode="center"
-      style={styles.background}
-      source={require("./app/assets/main_screen.png")}
-    >
-      <View style={styles.logoContainer}>
-        <Image
-          style={styles.logo}
-          source={require("./app/assets/fingem_logotransparent.png")}
-        />
-        <Text
-          style={styles.motto}
-          source={require("./app/assets/Permanent_Marker/PermanentMarker-Regular.ttf")}
-        >
-          Empowering Communities Through Financial Literacy
-        </Text>
-      </View>
-      <TouchableOpacity
-        title="LOGIN"
-        style={styles.loginButton}
-        onPress={() => navigation.navigate("GameBoard")}
-      >
-        <Text style={styles.buttonText}>LOGIN</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        title="REGISTER"
-        style={styles.loginButton}
-        onPress={() => navigation.navigate("GameBoard")}
-      >
-        <Text style={styles.buttonText}>REGISTER</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        title="LIBRARY"
-        style={styles.loginButton}
-        onPress={() => navigation.navigate("GameBoard")}
-      >
-        <Text style={styles.buttonText}>LIBRARY</Text>
-      </TouchableOpacity>
-    </ImageBackground>
-  );
-}
-function GameBoard({ navigation }) {
-  return (
-    <ImageBackground
-      style={styles.gameboard}
-      source={require("./app/assets/gameboard.png")}
-    >
-      <Button
-        title="Go to Detail"
-        onPress={() => navigation.navigate("Details")}
-      />
-    </ImageBackground>
-  );
-}
-
-const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
 
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Home"
-          component={HomeScreen}
-          options={{
-            title: "FinGem.io",
-            headerStyle: {
-              backgroundColor: "#1be2dc",
-            },
-            headerTintColor: "#fff",
-            headerTitleStyle: {
-              fontWeight: "bold",
-            },
-          }}
-        />
-        <Stack.Screen
-          name="GameBoard"
-          component={GameBoard}
-          options={{
-            title: "FinGem.io",
-            headerStyle: {
-              backgroundColor: "#1be2dc",
-            },
-            headerTintColor: "#fff",
-            headerTitleStyle: {
-              fontWeight: "bold",
-            },
-          }}
-        />
+      <Stack.Navigator
+        initialRouteName="WelcomeScreen"
+        screenOptions={{
+          headerMode: "screen",
+          headerTintColor: "white",
+          headerStyle: { backgroundColor: "#1be2dc" },
+        }}
+      >
+        <Stack.Screen name="Welcome" component={WelcomeScreen} />
+        <Stack.Screen name="GameBoard" component={GameBoard} />
+        <Stack.Screen name="Round1" component={Round1} />
+        <Stack.Screen name="Visual1" component={Visual1} />
+        <Stack.Screen name="Visual2" component={Visual2} />
+        <Stack.Screen name="Imagine" component={Imagine} />
+        <Stack.Screen name="Question1" component={Question1} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  gameboard: {
-    flex: 1,
-    position: "relative",
-    resizeMode: "cover",
-  },
-  car: {
-    position: "absolute",
-    width: 100,
-    height: 50,
-  },
-  background: {
-    flex: 1,
-    resizeMode: "center",
-    justifyContent: "flex-end",
-    alignItems: "center",
-  },
-  loginButton: {
-    width: 140,
-    height: 53,
-    paddingVertical: 10,
-    paddingHorizontal: 25,
-    borderRadius: 50,
-    marginTop: 10,
-    marginBottom: 10,
-    backgroundColor: "#1be2dc",
-  },
-  buttonText: {
-    color: "white",
-    fontSize: 20,
-    textAlign: "center",
-  },
-  logo: {
-    width: 240,
-    height: 100,
-    padding: 50,
-  },
-  logoContainer: {
-    position: "absolute",
-    top: 10,
-    alignItems: "center",
-  },
-  motto: {
-    fontWeight: "bold",
-    paddingTop: 50,
-  },
-});
 export default App;

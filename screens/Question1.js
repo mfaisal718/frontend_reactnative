@@ -9,16 +9,14 @@ import {
   TextInput,
 } from "react-native";
 
-import Colors from "../constants/colors";
-
-function Question2(props) {
+function Question1({ navigation }) {
   return (
     <ImageBackground
       resizeMode="cover"
       style={styles.background}
-      source={require("../assets/question_2.png")}
+      source={require("../assets/16.png")}
     >
-      <TextInput></TextInput>
+      <TextInput backgroundColor="Gray"></TextInput>
     </ImageBackground>
   );
 }
@@ -54,4 +52,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Question2;
+export default Question1;
