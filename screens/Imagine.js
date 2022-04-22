@@ -15,7 +15,7 @@ export default function Imagine({ navigation }) {
           ref={video}
           style={styles.video}
           source={{
-            uri: "https://fast.wistia.com/embed/medias/a9d5gft6oo.jsonp",
+            uri: "https://moneyhubnyc.wistia.com/medias/pocx3n194s",
           }}
           useNativeControls
           resizeMode="contain"
