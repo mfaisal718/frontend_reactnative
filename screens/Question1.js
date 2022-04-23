@@ -1,13 +1,6 @@
 import React from "react";
-import {
-  Image,
-  ImageBackground,
-  StyleSheet,
-  Text,
-  View,
-  Button,
-  TextInput,
-} from "react-native";
+import { ImageBackground, StyleSheet, View, TextInput } from "react-native";
+import PrimaryButton from "../Components/PrimaryButton";
 
 function Question1({ navigation }) {
   return (
@@ -16,7 +9,10 @@ function Question1({ navigation }) {
       style={styles.background}
       source={require("../assets/16.png")}
     >
-      <TextInput backgroundColor="Gray"></TextInput>
+      <View>
+        <TextInput style={styles.answerInput}></TextInput>
+        <PrimaryButton>Submit</PrimaryButton>
+      </View>
     </ImageBackground>
   );
 }
@@ -27,28 +23,17 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
     alignItems: "center",
   },
-  loginButton: {
-    width: "100%",
-    height: 80,
-    backgroundColor: "#f0f",
-  },
-  registerButton: {
-    width: "100%",
-    height: 80,
-    textAlign: "center",
-    padding: 10,
-  },
-  logo: {
-    width: 200,
-    height: 100,
-  },
-  logoContainer: {
-    position: "absolute",
-    top: 70,
+  answerInput: {
+    flex: 1,
+    height: 50,
+    fontSize: 32,
+    borderBottomColor: "black",
+    borderBottomWidth: 2,
+    color: "black",
+    marginVertical: 8,
+    fontWeight: "bold",
+    justifyContent: "center",
     alignItems: "center",
-  },
-  motto: {
-    fontWeight: "400",
   },
 });
 
