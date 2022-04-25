@@ -1,8 +1,19 @@
+import { useState } from "react";
 import React from "react";
 import { ImageBackground, StyleSheet, View, TextInput } from "react-native";
 import PrimaryButton from "../Components/PrimaryButton";
 
 function Question1({ navigation }) {
+  const [enteredAnswer, setEnteredAnswer] = useState("");
+
+  function textInputHandler(enteredText) {
+    setEnteredText(enteredText);
+  }
+
+  function setInputHandler() {
+    setEnteredText("");
+  }
+
   return (
     <ImageBackground
       resizeMode="cover"
@@ -10,8 +21,12 @@ function Question1({ navigation }) {
       source={require("../assets/16.png")}
     >
       <View>
-        <TextInput style={styles.answerInput}></TextInput>
-        <PrimaryButton>Submit</PrimaryButton>
+        <TextInput
+          style={styles.answerInput}
+          value={enteredAnswer}
+          onChangeText={textInputHandler}
+        ></TextInput>
+        <PrimaryButton onPress={setInputHandler}>Submit</PrimaryButton>
       </View>
     </ImageBackground>
   );
